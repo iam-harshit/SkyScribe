@@ -1,0 +1,104 @@
+<!---
+In this app we have four screen
+1. Grant access screen
+2. Weather screen
+3. Loading screen
+4. Search screen
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyScribe - Search and See the Skies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h1>SkyScribe - Search and See the Skies</h1>
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+        <div class="weather-container">
+            <!--Grant location container-->
+            <div class="sub-container grant-location-container">
+                <img src="./assets/location.png" alt="location" width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow access to get weather information</p>
+                <button class="btn" data-grantAcess>Grant Access</button>
+            </div>
+
+            <!--Search weather form-->
+            <form class="form-container" action="" data-searchForm>
+                <input type="search" placeholder="Search for city..." data-searchInput>
+                <button class="btn" type="submit">
+                    <img src="./assets/search.png" alt="search" width="20" height="20" loading="lazy">
+                </button>
+            </form>
+
+            <!--Loading screen container-->
+            <div class="sub-container loading-container">
+                <img src="./assets/loading.gif" alt="loading" width="150" height="150" loading="lazy">
+                <p>Loading...</p>
+            </div>
+
+            <!--Show weather info-->
+            <div class="sub-container user-info-container">
+                <!--City name and flag-->
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+                <!--Weather description-->
+                <p data-weatherDesc></p>
+                <!--Weather Icon-->
+                <img data-weatherIcon>
+                <!--Temperature-->
+                <p data-temp></p>
+                <!--3 cards - parameters-->
+                <div class="parameter-container">
+                    <!--card 1-->
+                    <div class="parameter">
+                        <img src="./assets/wind.png">
+                        <p>Windspeed</p>
+                        <p data-windSpeed></p>
+                    </div>
+                    <!--card 2-->
+                    <div class="parameter">
+                        <img src="./assets/humidity.png" alt="">
+                        <p>Humidity</p>
+                        <p data-humidity></p>
+                    </div>
+                    <!--card 3-->
+                    <div class="parameter">
+                        <img src="./assets/cloud.png" alt="">
+                        <p>Clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- handle api fetch error -->
+            <div class="sub-container api-error-container">
+                <img src="./assets/not-found.png" data-notFoundImg />
+                <p data-apiErrorText></p>
+                <button class="btn" data-apiErrorBtn>Retry</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
