@@ -14,7 +14,7 @@ const apiErrorBtn = document.querySelector("[data-apiErrorBtn]");
 const messageText = document.querySelector("[data-messageText]");
 
 let currentTab = userTab;
-const API_KEY = "c5d2f09661f60953198e10f241b76885";
+const API_KEY = API_TOKEN;
 currentTab.classList.add("current-tab");
 getFromSessionStorage();
 
